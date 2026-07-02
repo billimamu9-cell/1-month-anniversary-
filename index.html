@@ -54,10 +54,6 @@
             background-color: #ced6e0;
             color: #333;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
         }
 
         .btn:hover {
@@ -74,7 +70,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform scale(0.9); }
+            from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
     </style>
@@ -91,9 +87,9 @@
 
     <div class="love-message" id="loveMessage">
         I love you so much! ❤️<br>
-        Happy 1-Month Anniversary! 🎉
-        You keep me happyyy
-        you keep my worlld soo much brighterr💝
+        Happy 1-Month Anniversary! 🎉<br>
+        You keep me happyyy<br>
+        you keep my worldd soo much brighterr<br>
         I hopee we satyyy togetherrr
     </div>
 
@@ -103,12 +99,25 @@
         const quizContainer = document.getElementById('quiz-container');
         const loveMessage = document.getElementById('loveMessage');
 
-        function moveNoButton() {
-            const padding = 20;
-            // बटन को स्क्रीन से बाहर जाने से रोकने के लिए मैक्सिमम रेंज सेट की
-            const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-            const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+        yesBtn.addEventListener('click', () => {
+            quizContainer.style.display = 'none';
+            loveMessage.style.display = 'block';
+        });
 
-            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
-            const randomY = Math.Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+        noBtn.addEventListener('mouseover', () => {
+            const containerRect = document.querySelector('.btn-container').getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = containerRect.height - btnRect.height;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
 
