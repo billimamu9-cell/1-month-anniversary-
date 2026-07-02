@@ -18,11 +18,13 @@
             overflow: hidden;
             text-align: center;
         }
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 30px;
             padding: 0 20px;
         }
+
         .btn-container {
             display: flex;
             gap: 20px;
@@ -32,6 +34,7 @@
             height: 80px;
             position: relative;
         }
+
         .btn {
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -40,23 +43,23 @@
             cursor: pointer;
             transition: transform 0.1s;
         }
+
         .yes-btn {
             background-color: #ff4757;
             color: white;
             z-index: 10;
         }
+
         .no-btn {
             background-color: #ced6e0;
             color: #333;
-             position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-
+            position: absolute;
         }
+
         .btn:hover {
             transform: scale(1.1);
         }
+
         .love-message {
             font-size: 1.8rem;
             color: #ff4757;
@@ -65,15 +68,16 @@ transform: translate(-50%, -50%);
             display: none;
             animation: fadeIn 1s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body>
 
-    <div id="quiz-section">
+    <div id="quiz-container">
         <h1>Will you stay with me forever Mehal? 🥺</h1>
         <div class="btn-container">
             <button class="btn yes-btn" id="yesBtn">Yes</button>
@@ -81,39 +85,26 @@ transform: translate(-50%, -50%);
         </div>
     </div>
 
-    <div id="loveSection" class="love-message">
-        <h2>Thank you so much. Mehal, I knew it you would say yes! ❤️</h2>
-        <p>You make my world so much brighter. ✨</p>
-        <p>Cheers to our 1-month anniversary and many more to come! 🥂💕</p>
+    <div class="love-message" id="loveMessage">
+        I love you so much! ❤️<br>
+        Happy 1-Month Anniversary! 🎉
+        You keep me happyyy
+        you keep my worlld soo much brighterr💝
+        I hopee we satyyy togetherrr
     </div>
 
     <script>
-        const noBtn = document.getElementById('noBtn');
         const yesBtn = document.getElementById('yesBtn');
-        const quizSection = document.getElementById('quiz-section');
-        const loveSection = document.getElementById('loveSection');
+        const noBtn = document.getElementById('noBtn');
+        const quizContainer = document.getElementById('quiz-container');
+        const loveMessage = document.getElementById('loveMessage');
 
-        function moveButton() {
-            const btnWidth = noBtn.offsetWidth;
-            const btnHeight = noBtn.offsetHeight;
-            const maxX = window.innerWidth - btnWidth - 20;
-            const maxY = window.innerHeight - btnHeight - 20;
-            const randomX = Math.max(10, Math.floor(Math.random() * maxX));
-            const randomY = Math.max(10, Math.floor(Math.random() * maxY));
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
-        }
+        function moveNoButton() {
+            const padding = 20;
+            // बटन को स्क्रीन से बाहर जाने से रोकने के लिए मैक्सिमम रेंज सेट की
+            const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+            const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
-        noBtn.addEventListener('mouseover', moveButton);
-        noBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            moveButton();
-        });
+            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+            const randomY = Math.Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
 
-        yesBtn.addEventListener('click', () => {
-            quizSection.style.display = 'none';
-            loveSection.style.display = 'block';
-        });
-    </script>
-</body>
-</html>
