@@ -54,10 +54,9 @@
             background-color: #ced6e0;
             color: #333;
             position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .btn:hover {
@@ -92,15 +91,15 @@ transform: translate(-50%, -50%);
     <div class="love-message" id="loveMessage">
         I love you so much! ❤️<br>
         Happy 1-Month Anniversary! 🎉<br>
-        You keep me happyyy<br>
-        you keep my worldd soo much brighterr<br>
-        I hopee we satyyy togetherrr
+        You keep me happyy<br>
+        you keep my worldd soo much brighter<br>
+        I hope we stayyy togetherrr
     </div>
 
     <script>
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
-        const quizContainer = document.getElementById('quiz-container');
+        const quizContainer = document.getElementById('quizContainer');
         const loveMessage = document.getElementById('loveMessage');
 
         yesBtn.addEventListener('click', () => {
@@ -111,17 +110,16 @@ transform: translate(-50%, -50%);
         noBtn.addEventListener('mouseover', () => {
             const containerRect = document.querySelector('.btn-container').getBoundingClientRect();
             const btnRect = noBtn.getBoundingClientRect();
-            
+
             const maxX = containerRect.width - btnRect.width;
             const maxY = containerRect.height - btnRect.height;
-            
+
             const randomX = Math.random() * maxX;
             const randomY = Math.random() * maxY;
-            
+
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
         });
     </script>
 </body>
 </html>
-
